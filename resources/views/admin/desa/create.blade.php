@@ -22,13 +22,13 @@ Manajemen Desa
         $('#kabupaten').change(function(e){
             var id_kab = $('#kabupaten').val()
             if(id_kab){
-                jQuery.ajax({
-                    url: '/admin/kecamatan/'+id_kab,
+                $.ajax({
+                    url: '/admin/getKecamatan/'+id_kab,
                     type: "GET",
-                    dataType: "json",
                     success:function(data){
+                        var response = JSON.parse(data);
                         $('#kecamatan').empty();
-                        $.each(data, function(key,value){
+                        $.each(response, function(key,value){
                             $('#kecamatan').append('<option value="'+key+'">'+value+'</option>');
                         });
                     },

@@ -150,7 +150,7 @@ class KecamatanController extends Controller
     }
 
     public function getKecamatan($id){
-        $kecamatan = Kecamatan::where('id_kecamatan','=',$id)->pluck('nama_kecamatan','id');
+        $kecamatan = Kecamatan::where('id_kabupaten','=',$id)->pluck('nama_kecamatan','id');
         return json_encode($kecamatan);
     }
 }

@@ -31,7 +31,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', 'admin\HomeController@Home')->name('admin-home');
     Route::resource('kabupaten', 'admin\KabupatenController');
     Route::resource('kecamatan', 'admin\KecamatanController');
-    Route::get('/kecamatan/{id}', 'admin\KecamatanController@getKecamatan');
+    Route::get('/getKecamatan/{id}', 'admin\KecamatanController@getKecamatan');
     Route::resource('desa', 'admin\DesaController');
     Route::prefix('potensi')->group(function () {
         Route::resource('sekolah', 'admin\SekolahController');

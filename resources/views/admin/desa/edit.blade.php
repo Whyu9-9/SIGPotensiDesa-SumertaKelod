@@ -16,19 +16,20 @@ Manajemen Desa
     <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />
 @endsection
 @section('add_js')
+    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
     <script>
     $(document).ready(function(e){
         $('#kabupaten').change(function(e){
             var id_kab = $('#kabupaten').val()
             if(id_kab){
-                jQuery.ajax({
-                    url: '/admin/kecamatan/'+id_kab,
-                    type: "GET",
-                    dataType: "json",
+                $.ajax({
+                    url: '/admin/getKecamatan/'+id_kab,
+                    method: "GET",
                     success:function(data){
+                        var response = JSON.parse(data);
                         $('#kecamatan').empty();
-                        $.each(data, function(key,value){
+                        $.each(response, function(key,value){
                             $('#kecamatan').append('<option value="'+key+'">'+value+'</option>');
                         });
                     },
@@ -45,13 +46,13 @@ Manajemen Desa
                 var id_kab = $('#kabupaten').val()
                 var test = {!!json_encode($desa->kecamatan->id)!!};
                 if(id_kab){
-                    jQuery.ajax({
-                        url: '/admin/kecamatan/'+id_kab,
-                        type: "GET",
-                        dataType: "json",
+                    $.ajax({
+                        url: '/admin/getKecamatan/'+id_kab,
+                        method: "GET",
                         success:function(data){
                             $('#kecamatan').empty();
-                            $.each(data, function(key,value){
+                            var response = JSON.parse(data);
+                            $.each(response, function(key,value){
                                 if(key==test){
                                     $('#kecamatan').append('<option value="'+key+'" selected>'+value+'</option>');
                                 }else{
