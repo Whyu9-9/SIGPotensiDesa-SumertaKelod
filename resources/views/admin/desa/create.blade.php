@@ -181,7 +181,6 @@ Manajemen Desa
             pathLine.on('click', function(e) {
                 alert(e.target.options.nama);
             } );
-          
         });
     </script>
 @endsection

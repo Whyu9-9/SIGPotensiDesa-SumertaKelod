@@ -4,23 +4,23 @@
 <link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" rel="stylesheet" />
 <style>
   .marker-cluster-small {
-    background-color: rgba(218, 94, 94, 0.6);
+    background-color: rgba(19, 3, 236, 0.6);
   }
   .marker-cluster-small div {
-    background-color: rgba(226, 36, 36, 0.6);
+    background-color: rgba(105, 114, 238, 0.6);
   }
   .marker-cluster-medium {
-    background-color: rgba(241, 211, 87, 0.6);
+    background-color: rgba(11, 29, 131, 0.6);
   }
   .marker-cluster-medium div {
-    background-color: rgba(240, 194, 12, 0.6);
+    background-color: rgba(59, 57, 167, 0.6);
   }
 
   .marker-cluster-large {
-    background-color: rgba(253, 156, 115, 0.6);
+    background-color: rgba(108, 72, 240, 0.719);
   }
   .marker-cluster-large div {
-    background-color: rgba(241, 128, 23, 0.6);
+    background-color: rgba(16, 9, 109, 0.6);
   }
 
   .sekolah .leaflet-popup-tip,
@@ -254,7 +254,7 @@
         let markerSekolah = L.marker([element.lat, element.lng], {
             icon: schoolIcon,
         }).bindPopup().addTo(mymap);
-        var msgSekolah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_sekolah']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/"+element['foto']+"'></li><li>Jenjang: "+element['jenis']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataSekolah/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
+        var msgSekolah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_sekolah']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/"+element['foto']+"'></li><li>Jenjang: "+element['jenis']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataSekolah/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
         markerSekolah.bindPopup(msgSekolah, popupsekolah);
         markerSekolah.on('click', function() {
             markerSekolah.openPopup();
@@ -267,7 +267,7 @@
         let markerPasar = L.marker([element.lat, element.lng], {
             icon: pasarIcon,
         }).bindPopup().addTo(mymap);
-        var msgPasar = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_pasar']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/"+element['foto']+"'></li><li>No Telepon: "+element['telepon']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataPasar/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
+        var msgPasar = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_pasar']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/"+element['foto']+"'></li><li>No Telepon: "+element['telepon']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataPasar/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
         markerPasar.bindPopup(msgPasar, popuppasar);
         markerPasar.on('click', function() {
             markerPasar.openPopup();
@@ -280,7 +280,7 @@
         let markerTempatIbadah = L.marker([element.lat, element.lng], {
             icon: tempatIbadahIcon,
         }).bindPopup().addTo(mymap);
-        var msgTempatIbadah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_tempat_ibadah']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/"+element['foto']+"'></li><li>Agama: "+element['agama']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataTempatIbadah/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
+        var msgTempatIbadah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_tempat_ibadah']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/"+element['foto']+"'></li><li>Agama: "+element['agama']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataTempatIbadah/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
         markerTempatIbadah.bindPopup(msgTempatIbadah, popupibadah);
         markerTempatIbadah.on('click', function() {
             markerTempatIbadah.openPopup();
@@ -293,7 +293,7 @@
         let markerTempatWisata = L.marker([element.lat, element.lng], {
             icon: tempatWisataIcon,
         }).bindPopup().addTo(mymap);
-        var msgTempatWisata = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_tempat_wisata']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/"+element['foto']+"'></li><li>No Telepon: "+element['telepon']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataTempatWisata/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
+        var msgTempatWisata = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_tempat_wisata']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/"+element['foto']+"'></li><li>No Telepon: "+element['telepon']+"</li><li>Alamat: "+element['alamat']+"</li><li><form action='/loadDataTempatWisata/"+element['id']+"'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
         markerTempatWisata.bindPopup(msgTempatWisata, popupwisata);
         markerTempatWisata.on('click', function() {
             markerTempatWisata.openPopup();

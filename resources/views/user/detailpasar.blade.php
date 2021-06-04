@@ -44,7 +44,7 @@
             return marker;
         }
     });
-
+	
     mymap.pm.addControls({  
         position: 'topleft',
         drawCircle: false,
@@ -183,6 +183,8 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <p> 
+                                        <strong>Keterangan</strong>
+                                        <br>
                                         {{$pasar->keterangan}}
                                     </p>
                                 </div>

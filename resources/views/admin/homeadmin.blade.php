@@ -158,7 +158,7 @@ Dashboard
         let markerSekolah = L.marker([element.lat, element.lng], {
             icon: schoolIcon,
         }).bindPopup().addTo(mymap);
-        var msgSekolah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_sekolah']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/"+element['foto']+"'></li><li>Jenjang: "+element['jenis']+"</li><li>Alamat: "+element['alamat']+"</li><li><a style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm text-white' action='/admin/potensi/sekolah/"+element['id']+"'>Lihat Detail</a></li></ul>"
+        var msgSekolah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>"+element['nama_sekolah']+"</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/"+element['foto']+"'></li><li>Jenjang: "+element['jenis']+"</li><li>Alamat: "+element['alamat']+"</li><li><a style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm text-white' href='/admin/potensi/sekolah/"+element['id']+"'>Lihat Detail</a></li></ul>"
         markerSekolah.bindPopup(msgSekolah, popupsekolah);
         markerSekolah.on('click', function() {
             markerSekolah.openPopup();

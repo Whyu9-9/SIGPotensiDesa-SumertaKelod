@@ -185,6 +185,8 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <p> 
+                                        <strong>Keterangan</strong>
+                                        <br>
                                         {{$tempatibadah->keterangan}}
                                     </p>
                                 </div>
